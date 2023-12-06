@@ -27,21 +27,16 @@ public class Combinations {
                     tokenizer.nextToken();
                 }
 
-                
                 String ftr = tokenizer.nextToken().trim();
-
                 
                 for (int i = 0; i < 2; i++) {
                     tokenizer.nextToken();
                 }
-
                 
                 String htr = tokenizer.nextToken().trim();
-
                 
                 combination.set(htr + " " + ftr);
 
-                
                 context.write(combination, one);
             } catch (Exception e) {
                 
