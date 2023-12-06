@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class shots {
+public class Shots {
 
     public static class ShotsMapper extends Mapper<Object, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
@@ -23,21 +23,24 @@ public class shots {
             StringTokenizer tokenizer = new StringTokenizer(value.toString(), ",");
 
             try {
+                // Skip the first field
                 tokenizer.nextToken();
 
+                // Extract home team and away team
                 String homeTeam = tokenizer.nextToken().trim();
                 String awayTeam = tokenizer.nextToken().trim();
 
+                // Skip 7 fields
                 for (int i = 0; i < 7; i++) {
                     tokenizer.nextToken();
                 }
 
                 int homeShots = Integer.parseInt(tokenizer.nextToken().trim());
                 int awayShots = Integer.parseInt(tokenizer.nextToken().trim());
-
+                
                 team.set(homeTeam);
                 context.write(team, new IntWritable(homeShots));
-
+                
                 team.set(awayTeam);
                 context.write(team, new IntWritable(awayShots));
 
@@ -71,7 +74,7 @@ public class shots {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "average shots per team");
-        job.setJarByClass(shots.class);
+        job.setJarByClass(Shots.class);
         job.setMapperClass(ShotsMapper.class);
         job.setReducerClass(ShotsReducer.class);
         job.setOutputKeyClass(Text.class);

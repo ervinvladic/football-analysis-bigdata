@@ -31,11 +31,9 @@ public class GoalsReceived {
                 int awayGoalsReceived = Integer.parseInt(tokenizer.nextToken().trim());
                 int homeGoalsReceived = Integer.parseInt(tokenizer.nextToken().trim());
 
-                // Emitting data for home team (goals received from away teams)
                 team.set(homeTeam);
                 context.write(team, new IntWritable(homeGoalsReceived));
 
-                // Emitting data for away team (goals received from home teams)
                 team.set(awayTeam);
                 context.write(team, new IntWritable(awayGoalsReceived));
 
