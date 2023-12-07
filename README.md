@@ -15,7 +15,22 @@
 - In the [**ShotsOnTarget.java**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/ShotsOnTarget.java) file, you can find the calculation of the average number of shots on target team has in this season per game
 - In the [**YellowCards.java**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/YellowCards.java) file, you can find the calculation of the average number of yellow cards team receives in this season per game
 
+## Prerequisites:
+- Hadoop installed
 
+## Commands 
+- Run Command Prompt as Administrator:
+- Navigate to Hadoop sbin Directory: **cd C:\hadoop\sbin**
+- Start Hadoop Services: **start-all.cmd**
+- Create HDFS Directory: **hadoop fs -mkdir /input_average**
+- Copy Data to HDFS (Upload the 'soccer21-22.csv' file from your local file system to the 'input_average' directory): **hadoop -put /path/to/soccer21-22.csv /input_average**
+- List Files in HDFS Directory: **hadoop fs -ls /input_average (Optional)**
+- Display Contents of a File in HDFS: **hadoop fs -cat /input_average/soccer21-22.csv (Optional)**
+- Build Hadoop JAR File: **Compile your MapReduce code and package it into a JAR file**
+- Run MapReduce Job: **hadoop jar YourJarFile.jar YourMapperClass YourReducerClass YourInputPath YourOutputPath
+(Example: hadoop jar C:\Users\Ervin\Desktop\goalsreceived.jar GoalsReceived /input_average/soccer21-22.csv /output_dir_goalsreceived)**
+- Display Results: **hadoop fs -cat YourOutputPath/part-r-00000 (Example: hadoop fs -cat /output_dir_goalsreceived/part-r-00000)**
+  
 ## Done by
 - [**Ervin Vladić**](https://github.com/ervinvladic)
 - [**Benjamin Mehanović**](https://github.com/benjom22)
