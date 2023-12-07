@@ -6,6 +6,7 @@
 - The project was done as a part of the **CEN 569 309 Big Data Technologies** course at the Master Study of Data Science at International Burch University.
 
 ## Repository structure
+- In the [**dataset**](https://github.com/ervinvladic/football-analysis-bigdata/tree/main/dataset) directory, you can the dataset that is used for this project.
 - In the [**Combinations.java**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/Combinations.java) file, you can find counter for combinations of half-time and full-time score ratios
 - In the [**Corners.java**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/Corners.java) file, you can find the calculation of the average number of corners per team in this season per game
 - In the [**GoalsReceived.java**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/GoalsReceived.java) file, you can find the calculation of the average number of goals team receives in this season per game
