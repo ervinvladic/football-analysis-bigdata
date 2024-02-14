@@ -42,6 +42,7 @@
 - Format Date Column: **Ensure that the Date column is in the YYYY-MM-DD format for successful insertion
   (We have already ensured that the Date column is in the correct YYYY-MM-DD format, and the processed dataset is located here: [**processed - soccer21-22.csv**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/dataset/processed%20-%20soccer21-22.csv)**
 - Bulk Insert Data: **BULK INSERT EnglishPremierLeague FROM '/path/to/soccer21-22.csv'WITH (FIELDTERMINATOR = ',',  ROWTERMINATOR = '\n',FIRSTROW = 1,  FORMAT = 'CSV');**
+- Run Provided SQL Queries: You can find the SQL queries for calculations in the repository here: [**sql queries**](https://github.com/ervinvladic/football-analysis-bigdata/tree/main/sql%20queries)
   
 ## Done by
 - [**Ervin Vladić**](https://github.com/ervinvladic)
