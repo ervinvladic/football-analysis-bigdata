@@ -40,17 +40,8 @@
 - Create Database:  **CREATE DATABASE EnglishPremierLeague;**
 - Create Table: **CREATE TABLE EnglishPremierLeague (features);**
 - Format Date Column: **Ensure that the Date column is in the YYYY-MM-DD format for successful insertion
-  (We have already ensured that the Date column is in the correct YYYY-MM-DD format, and the processed dataset is located here: [**YellowCards.java**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/YellowCards.java)**
-- Bulk Insert Data:
-
-**BULK INSERT EnglishPremierLeague
-FROM '/path/to/soccer21-22.csv'
-WITH (
-    FIELDTERMINATOR = ',',  
-    ROWTERMINATOR = '\n',
-    FIRSTROW = 1,  
-    FORMAT = 'CSV'
-);**
+  (We have already ensured that the Date column is in the correct YYYY-MM-DD format, and the processed dataset is located here: [**processed - soccer21-22.csv**](https://github.com/ervinvladic/football-analysis-bigdata/blob/main/dataset/processed%20-%20soccer21-22.csv)**
+- Bulk Insert Data: **BULK INSERT EnglishPremierLeague FROM '/path/to/soccer21-22.csv'WITH (FIELDTERMINATOR = ',',  ROWTERMINATOR = '\n',FIRSTROW = 1,  FORMAT = 'CSV');**
   
 ## Done by
 - [**Ervin Vladić**](https://github.com/ervinvladic)
